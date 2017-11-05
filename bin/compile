@@ -3,6 +3,18 @@
 BUILD_DIR=$1
 CACHE_DIR=$2
 
+# tmux
+
+wget https://github.com/tmux/tmux/releases/download/2.6/tmux-2.6.tar.gz
+tar xzf tmux-2.6.tar.gz
+cd tmux-2.6
+./configure --prefix=$BUILD_DIR
+make
+make install
+cd ..
+rm -rf tmux-2.6
+rm tmux-2.6.tar.gz
+
 echo "Installing..."
 cd $CACHE_DIR
 yes Y | ${BUILD_DIR}/q2server install
