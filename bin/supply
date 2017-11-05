@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "Installing..."
+yes Y | ./q2server install
+
+set -e
+
+echo "Permissions..."
+chown $(whoami):$(whoami) -R *
+
+echo "Starting..."
+./q2server start
