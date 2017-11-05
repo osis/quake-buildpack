@@ -1,10 +1,8 @@
 #!/bin/bash
 
-export BUILDPACK_DIR=`dirname $(readlink -f ${BASH_SOURCE%/*})`
-
-pwd
-ls -la
-ls -la $BUILDPACK_DIR
+BUILD_DIR=$1
+CACHE_DIR=$2
 
 echo "Installing..."
-yes Y | ${BUILDPACK_DIR}/q2server install
+cd $CACHE_DIR
+yes Y | ${BUILD_DIR}/q2server install
