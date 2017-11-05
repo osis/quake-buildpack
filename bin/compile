@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "Installing..."
+yes Y | ./q2server install
